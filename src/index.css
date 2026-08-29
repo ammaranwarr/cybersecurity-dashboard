@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-200 antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-md border border-slate-700/50 shadow-lg rounded-2xl;
+  }
+
+  .glass-input {
+    @apply bg-slate-950/50 border border-slate-700/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400/50 focus:border-purple-400/50 transition-all duration-300 text-slate-200 placeholder-slate-500;
+  }
+
+  .primary-button {
+    @apply bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-500 hover:to-blue-400 text-white rounded-xl font-medium shadow-lg shadow-purple-500/20 transition-all duration-300;
+  }
+
+  .secondary-button {
+    @apply bg-slate-800/50 hover:bg-slate-800 border border-slate-700 text-slate-200 rounded-xl font-medium transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Compact Mode Design Overrides */
+html.compact-mode main {
+  padding: 1rem !important;
+}
+
+html.compact-mode .p-6,
+html.compact-mode .glass-panel {
+  padding: 1rem !important;
+}
+
+html.compact-mode .space-y-6 > * + * {
+  margin-top: 0.75rem !important;
+}
+
+html.compact-mode .gap-6 {
+  gap: 0.75rem !important;
+}
+
+html.compact-mode table th,
+html.compact-mode table td {
+  padding: 0.5rem 1rem !important;
+}
+
+html.compact-mode .py-6 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+html.compact-mode h3.text-lg {
+  margin-bottom: 0.75rem !important;
+}
